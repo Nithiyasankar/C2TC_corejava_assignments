@@ -1,27 +1,24 @@
 package com.nithiya.assignment1.utility;
 
-import Assignment_1_Employee.Employee;
+import com.nithiya.assignment1.employee.Employee;
+import com.nithiya.assignment1.employee.Manager;
+import com.nithiya.assignment1.employee.Developer;
+
 
 /**
- * Utility class for operations on Employee objects.
+ * Utility class to perform operations on Employee objects.
  */
-public class EmployeeUtility{
+public class EmployeeUtility {
 
-    /**
-     * Displays employee details.
-     */
-    public static void printEmployeeDetails(Employee emp) {
-        System.out.println(emp.getDetails());
+    // Public method to display employee details
+    public static void displayEmployeeDetails(Employee e) {
+        System.out.println("Employee ID: " + e.getEmployeeId());
+        System.out.println("Name: " + e.getName());
+        System.out.println("Salary: " + e.getSalary());
     }
 
-    /**
-     * Increases employee salary by percentage.
-     * Demonstrates access to protected setter.
-     */
-    public static void increaseSalary(Employee emp, double percent) {
-        double newSalary = emp.getSalary() + (emp.getSalary() * percent / 100);
-        // Using protected setter inside same package via inheritance access
-        emp.setSalary(newSalary);
-        System.out.println("Salary updated for " + emp.getName());
+    // Method to increase salary (protected setter used here)
+    public static void giveRaise(Employee e, double amount) {
+        e.setSalary(e.getSalary() + amount);
     }
 }

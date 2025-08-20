@@ -1,32 +1,32 @@
 package com.nithiya.assignment1;
 
-import Assignment_1_Employee.Developer;
-import Assignment_1_Employee.Manager;
-import Assignment_1_Utility.EmployeeUtility;
+import com.nithiya.assignment1.employee.Manager;
+import com.nithiya.assignment1.employee.Developer;
+import com.nithiya.assignment1.utility.EmployeeUtility;
 
 /**
- * Main class outside of any package.
- * Demonstrates usage of employees and utilities packages.
+ * Main class to demonstrate the functionality of Employee, Manager, and Developer.
  */
 public class AssignmentMain {
     public static void main(String[] args) {
-        // Create Manager object
-        Manager mgr = new Manager("Alice", "M101", 80000, "Sales");
+        Manager m1 = new Manager("Nithiya", 101, 75000, "HR");
+        Developer d1 = new Developer("Abinaya", 102, 65000, "Java");
 
-        // Create Developer object
-        Developer dev = new Developer("Bob", "D202", 60000, "Java");
+        System.out.println("Manager Details:");
+        EmployeeUtility.displayEmployeeDetails(m1);
+        System.out.println("Department: " + m1.getDepartment());
 
-        // Use EmployeeUtilities
-        EmployeeUtility.printEmployeeDetails(mgr);
-        EmployeeUtility.printEmployeeDetails(dev);
+        System.out.println("\nDeveloper Details:");
+        EmployeeUtility.displayEmployeeDetails(d1);
+        System.out.println("Programming Language: " + d1.getProgrammingLanguage());
 
-        // Increase salary
-        EmployeeUtility.increaseSalary(mgr, 10);
-        EmployeeUtility.increaseSalary(dev, 15);
+        // Give raise
+        System.out.println("\nGiving raise...");
+        EmployeeUtility.giveRaise(m1, 5000);
+        EmployeeUtility.giveRaise(d1, 4000);
 
-        // Print details again
-        System.out.println("\n--- After Salary Increment ---");
-        EmployeeUtility.printEmployeeDetails(mgr);
-        EmployeeUtility.printEmployeeDetails(dev);
+        System.out.println("\nAfter Raise:");
+        EmployeeUtility.displayEmployeeDetails(m1);
+        EmployeeUtility.displayEmployeeDetails(d1);
     }
 }

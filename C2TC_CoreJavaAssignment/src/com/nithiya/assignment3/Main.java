@@ -1,23 +1,22 @@
 package com.nithiya.assignment3;
 
-import assignment_3.Book;
-import assignment_3.Library;
-import assignment_3.Magazine;
+import com.nithiya.assignment3.*;
+import com.nithiya.assignment3.Library;
 
 public class Main {
     public static void main(String[] args) {
-        // Inheritance demonstration
-        Book book = new Book(101, "Java Basics", "James Gosling");
-        Magazine magazine = new Magazine(201, "Tech Today", 45);
+        // Part A – Inheritance (is-a)
+        Book book1 = new Book(101, "Java Basics", "James Gosling");
+        Magazine mag1 = new Magazine(201, "Tech Today", 45);
 
-        book.displayInfo();
-        magazine.displayInfo();
+        book1.displayInfo();
+        mag1.displayInfo();
 
-        // Composition demonstration
-        Library library = new Library();
-        library.addItem(book);
-        library.addItem(magazine);
+        // Part B – Composition (has-a)
+        Library lib = new Library();
+        lib.addItem(book1);
+        lib.addItem(mag1);
 
-        library.showAllItems();
+        lib.showAllItems();
     }
 }

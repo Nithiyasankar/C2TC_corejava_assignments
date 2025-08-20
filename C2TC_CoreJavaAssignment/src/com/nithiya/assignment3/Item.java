@@ -10,11 +10,10 @@ public class Item {
     }
 
     public void displayInfo() {
-        System.out.println("ID: " + id + ", Title: " + title);
+        System.out.println("Item [ID: " + id + ", Title: " + title + "]");
     }
 
-    public String getTitle() {
-        return title;
-}
-
+    // Getters
+    public int getId() { return id; }
+    public String getTitle() { return title; }
 }

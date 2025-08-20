@@ -1,11 +1,11 @@
 package com.nithiya.assignment3;
 
 import java.util.ArrayList;
-
-import assignment_3.Item;
+import java.util.List;
+import com.nithiya.assignment3.Item;
 
 public class Library {
-    private ArrayList<Item> items;
+    private List<Item> items;
 
     public Library() {
         items = new ArrayList<>();
@@ -18,7 +18,13 @@ public class Library {
     public void showAllItems() {
         System.out.println("Library contains:");
         for (Item item : items) {
-            System.out.println("- " + item.toString());
+            if (item instanceof com.nithiya.assignment3.Book book) {
+                System.out.println("- " + book.getTitle() + " by " + book.getAuthor());
+            } else if (item instanceof com.nithiya.assignment3.Magazine magazine) {
+                System.out.println("- " + magazine.getTitle() + " Issue " + magazine.getIssueNumber());
+            } else {
+                System.out.println("- " + item.getTitle());
+            }
         }
     }
 }

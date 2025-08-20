@@ -1,7 +1,5 @@
 package com.nithiya.assignment3;
 
-import assignment_3.Item;
-
 public class Book extends Item {
     private String author;
 
@@ -12,11 +10,9 @@ public class Book extends Item {
 
     @Override
     public void displayInfo() {
-        System.out.println("Book: [ID: " + super.toString() + ", Title: " + getTitle() + ", Author: " + author + "]");
+        System.out.println("Book [ID: " + getId() + ", Title: " + getTitle() +
+                           ", Author: " + author + "]");
     }
 
-    @Override
-    public String toString() {
-        return getTitle() + " by " + author;
-    }
+    public String getAuthor() { return author; }
 }

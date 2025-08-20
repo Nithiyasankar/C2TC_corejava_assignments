@@ -1,14 +1,13 @@
 package com.nithiya.assignment1.employee;
 
-import Assignment_1_Employee.Employee;
 
 /**
- * Manager class extends Employee and adds department attribute.
+ * The Manager class extends Employee and adds a department attribute.
  */
 public class Manager extends Employee {
     private String department;
 
-    public Manager(String name, String employeeId, double salary, String department) {
+    public Manager(String name, int employeeId, double salary, String department) {
         super(name, employeeId, salary);
         this.department = department;
     }
@@ -19,10 +18,5 @@ public class Manager extends Employee {
 
     public void setDepartment(String department) {
         this.department = department;
-    }
-
-    @Override
-    public String getDetails() {
-        return super.getDetails() + ", Department: " + department;
     }
 }
